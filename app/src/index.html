@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web3 Mail App</title>
+</head>
+<style>
+  input {
+    display: block;
+    margin-bottom: 12px;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  
+  section {
+    background-color:ghostwhite;
+    border-style: ridge;
+    margin-bottom: 20px;
+  }
+</style>
+<body>
+  <h1>Web3 Mail App</h1>
+  <h4 id="smartaddr">Smart Contract Address: </h4>
+  <h4 id="youraddr">Your Address: </h4>
+  
+  <section>
+    <label for="sendMailAddress">Receiver address:</label>
+    <input id="sendMailAddress"></input>
+    
+    <label for="title">Header:</label>
+    <input id="title"></input>
+    
+    <label for="text">Text:</label>
+    <input id="text"></input>
+    
+    <label for="priority">Priority (1, 2, 3, 4, 5):</label>
+    <input id="priority"></input>
+    
+    <button onclick="App.sendMail()">SEND MAIL</button>
+    
+  </section>
+  
+  <section>
+    <div id="seeAllMailsDiv">
+      <button onclick="App.seeAllMails()">SEE MY ALL MAILS</button>
+      
+    </div>
+  </section>
+  
+  
+  <section>
+    <div id="seeAllMailsSortedByPriorityDiv">
+      <button onclick="App.seeAllMailsSortedByPriority()">SEE MY ALL MAILS SORTED BY PRIORITY</button>
+      
+    </div>
+  </section>
+  
+  <section>
+    <div id="searchInTitleDiv">
+      <label for="wordToSearch">Enter a string to find mails whose title including it:</label>
+      <input id="wordToSearch"></input>
+      <button onclick="App.searchInTitle()">FIND MAILS</button>
+      
+    </div>
+  </section>
+  
+  <section>
+    <div id="seeDataDiv">
+      <button onclick="App.seeData()">SEE THE USAGE DATA OF APP (ONLY FOR OWNER OF APP)</button>
+      <p id="seeDataResult"></p>
+    </div>
+  </section>
+  
+  <section>
+    <div id="seeMailsInLastSeconds">
+      <label for="lastSeconds">Enter for last how many seconds do you want to get data:</label>
+      <input id="lastSeconds"></input>
+      
+      <button onclick="App.seeMailsInLastSeconds()">SEE THE DATA (ONLY FOR OWNER OF APP)</button>
+      <p id="seeMailsInLastSecondsResult"></p>
+    </div>
+  </section>
+  
+  <script src="index.js"></script>
+</body>
+</html>
